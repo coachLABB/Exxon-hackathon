@@ -1,0 +1,10 @@
+version: '3.8'  # Specify the version of Docker Compose
+
+services:
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - "3306:3306"  # Map host port 3306 to container port 3306
