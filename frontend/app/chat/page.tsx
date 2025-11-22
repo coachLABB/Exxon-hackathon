@@ -90,11 +90,21 @@ export default function ChatPage() {
                   }`}
                 >
                 {message.isBot ? (
-                  <div className="prose prose-invert text-sm max-w-none">
-                    <ReactMarkdown>{message.text}</ReactMarkdown>
+                  <div className="prose prose-invert text-sm max-w-none whitespace-pre-wrap">
+                    <ReactMarkdown
+                      components={{
+                        p: ({ children, ...props }) => (
+                          <p className="mb-3" {...props}>
+                            {children}
+                          </p>
+                        ),
+                      }}
+                    >
+                      {message.text}
+                    </ReactMarkdown>
                   </div>
                 ) : (
-                  <p className="text-sm">{message.text}</p>
+                  <p className="text-sm whitespace-pre-wrap">{message.text}</p>
                 )}
               </div>
             </div>

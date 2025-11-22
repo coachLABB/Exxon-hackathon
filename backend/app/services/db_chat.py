@@ -99,7 +99,7 @@ def get_response(user_query: str, db: SQLDatabase, chat_history: list):
     Formatting requirements:
 
     - Use section titles such as **Findings**, **Details**, and **Summary**.
-    - Between each section, use two newlines to separate them.
+    - Between each section, use a blank line to separate them.
     - Present lists using bullet points for readability.
     - Dates must be formatted as “YYYY-MM-DD” unless the user asks otherwise.
     - Include units (e.g., MT) whenever relevant.
